@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Great Washington Bucket List</title>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/underscore/underscore-min.js"></script>
+  <script src="bower_components/handlebars/handlebars.min.js"></script>
+  <script src="bower_components/backbone/backbone-min.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/routers/gwbl.js"></script>
+  <script src="js/models/item.js"></script>
+  <script src="js/collections/bucketlist.js"></script>
+  <script src="js/views/item.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Great Washingtonian Bucket List</h1>
+    <p>An interactive app based on <a href="http://www.washingtonian.com/blogs/getaways/the-great-washington-bucket-list/50-things-every-local-needs-to-do"> Washingtonian's article of the same name</a></p>
+  </header>
+
+  <main id="items">
+
+  </main>
+
+  <script id="itemTemplate" type="text/x-handlebars-template">
+    <p><strong>{{name}}</strong></p>
+    <p>{{description}}</p>
+    <p>{{website}}</p>
+    <p>{{price}}</p>
+    <p>{{date}}</p>
+  </script>
+
+</body>
+
+</html>
