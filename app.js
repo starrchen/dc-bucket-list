@@ -21,11 +21,11 @@ app.use("*.json", function(req, res, next){
   next();
 });
 
-var itemsController = require("./controllers/itemsController");
+var itemsController = require("./api/controllers/itemsController");
 app.use("/", itemsController);
 
 app.get("/", function(req, res){
-  res.send("Good morning!");
+  res.sendfile("index.html");
 });
 
 app.listen(4000, function(){
