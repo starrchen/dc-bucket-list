@@ -1,5 +1,5 @@
 <h2>Bucket List Items:</h2>
 
-<div data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'-created_at'">
-  <p><a data-ui-sref="itemShow({id: item.id})">{{item.name}}</a></p>
+<div id="all-items" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'-created_at'">
+  <p class="item"><a data-ui-sref="itemShow({id: item.id})">{{item.name}}</a></p>
 </div>

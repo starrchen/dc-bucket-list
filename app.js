@@ -24,7 +24,7 @@ app.use("*.json", function(req, res, next){
 var itemsController = require("./api/controllers/itemsController");
 app.use("/", itemsController);
 
-app.get("/", function(req, res){
+app.get("*", function(req, res){
   res.sendfile("index.html");
 });
 
