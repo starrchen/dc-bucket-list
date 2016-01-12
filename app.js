@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/gwbl");
+mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/gwbl");
 
 var bodyParser = require("body-parser");
 var session = require("express-session");
@@ -28,6 +28,6 @@ app.get("*", function(req, res){
   res.sendfile("index.html");
 });
 
-app.listen(4000, function(){
+app.listen(process.env.PORT || 4000, function(){
   console.log("Beep boop -- port 4000");
 });
