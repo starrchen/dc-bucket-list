@@ -5,8 +5,20 @@
   .module("gwbl", [
     "ui.router",
     "items"
+  ])
+  .config([
+    "$stateProvider",
+    RouterFunction
   ]);
 
-  console.log("Loading module");
+  function RouterFunction($stateProvider){
+    $stateProvider
+    .state("itemIndex", {
+      url: "/",
+      templateUrl: "js/items/index.html",
+      controller: "ItemIndexController",
+      controllerAs: "ItemIndexViewModel"
+    })
+  }
 
 }());
