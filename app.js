@@ -24,8 +24,12 @@ app.use("*.json", function(req, res, next){
 var itemsController = require("./data/controllers/itemsController");
 app.use("/", itemsController);
 
-app.get("*", function(req, res){
+app.get("/", function(req, res){
   res.sendfile("index.html");
+});
+
+app.get("/signup", function(req, res){
+  res.sendfile("public/js/users/signup.html");
 });
 
 app.listen(process.env.PORT || 4000, function(){
