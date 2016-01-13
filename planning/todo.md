@@ -5,7 +5,7 @@
 - [ ] Filter data by parameters (date, price, alphabetical, etc.)
 - [ ] Deploy to Heroku
 - [ ] $locationProvider (remove `#` from URL)
-- [ ] Complete all seeds (currently: 8/50)
+- [ ] Complete all seeds (currently: 18/50 entries, most incomplete)
 - [ ] Add styling ([Bootstrap](http://getbootstrap.com/) / [Materialize](http://materializecss.com/))
 
 ## Filters
@@ -15,6 +15,15 @@
 - [x] Click "Not free" button, only displays items where `price: "Free"` not true?
 > Working but not ideal so:
 - [ ] Get filters off HTML and into JS files
+
+- [x] Second set of filter buttons working, "Show all" still working
+> Multiple filters possible in HTML but still ideal...
+
+### Filters
+- [x] Free/not free
+- [ ] Plan ahead/spontaneous
+- [ ] District proper/ MD-VA
+- [ ]
 
 ## Users
 - [ ] User authentication
