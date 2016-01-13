@@ -1,39 +1,42 @@
-<div class="container">
-  <h2>Bucket List Items:</h2>
+<h2>Bucket List Items:</h2>
 
+<div>
   <button id="free" data-ng-click="itemFilter={free: true}">Free</button>
   <button id="not-free" data-ng-click="itemFilter={free: false}">Not free</button>
-  <button data-ng-click="itemFilter={description: 'CHANGE THIS STARR'}">Change this Starr</button>
-  <button data-ng-click="itemFilter={description: '!'+'CHANGE THIS STARR'}">Don't change this</button>
+  <button data-ng-click="itemFilter={planAhead: false}">Spontaneous fun</button>
+  <button data-ng-click="itemFilter={planAhead: true}">Plan ahead fun</button>
+  <button data-ng-click="itemFilter={metro: true}">Metro-accessible</button>
+  <button data-ng-click="itemFilter={metro: false}">Find a ride</button>
   <button id="reset" data-ng-click="itemFilter=''">Show All</button>
+</div>
+<!--
+<ol>
+  <li class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:itemFilter">
+    <p class="item-name"><a data-ui-sref="id: item.id">{{item.name}}</a>
+      <ul>
+        <li class="item-free"><a data-ui-sref="id: item.id">{{item.free}}</a></li>
+      </ul>
+    </p>
+  </li>
+</ol> -->
 
-  <ol>
-    <li class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:itemFilter">
-      <p class="item-name"><a data-ui-sref="id: item.id">{{item.name}}</a>
-        <ul>
-          <li class="item-free"><a data-ui-sref="id: item.id">{{item.free}}</a></li>
-        </ul>
-      </p>
-    </li>
-  </ol>
+<ol>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:itemFilter">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <li>{{item.name}}</li>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <p>{{item.description}}</p>
 
-  <ol>
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:itemFilter">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingOne">
-          <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <li>{{item.name}}</li>
-            </a>
-          </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-          <div class="panel-body">
-            {{item.description}}
-          </div>
+          <p ng-if="item.free === true"><em>Free to do!</em></p> <p ng-if="item.free === false"><em>Please visit the website listed for pricing.</em></p>
         </div>
       </div>
     </div>
-  </ol>
-
-</div>
+  </div>
+</ol>
