@@ -9,6 +9,6 @@
   ]);
 
   function ItemFactoryFunction($resource){
-    return $resource("http://localhost:4000/items", {});
+    return $resource("http://dc-bucket-list.herokuapp.com/items", {});
   }
 }());
