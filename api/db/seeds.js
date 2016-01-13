@@ -64,3 +64,74 @@ var citysights = new ItemModel({
   free: false,
   website: "http://www.wmata.com/bus"
 }).save();
+
+var civilwar = new ItemModel({
+  name: "Civil War Battlefields",
+  description: "Lorem ipsum CHANGE THIS STARR",
+  free: true,
+  website: "http://www.nps.gov/search/?affiliate=nps&query=battlefield",
+}).save();
+
+var congresscemetery = new ItemModel({
+  name: "Congressional Cemetery",
+  description: "Lorem ipsum CHANGE THIS STARR",
+  free: true,
+  website: "http://www.congressionalcemetery.org"
+}).save();
+
+var fords = new ItemModel({
+  name: "Ford's Theatre",
+  description: "CHANGE THIS STARR",
+  free: false,
+  website: "http://www.fords.org/"
+}).save();
+
+var fourthfireworks = new ItemModel({
+  name: "Fourth of July Fireworks on the Mall",
+  description: "CHANGE THIS STARR",
+  free: true,
+  date: "July 4th",
+  website: "http://www.nps.gov/subjects/nationalmall4th/fireworks.htm"
+}).save();
+
+var frederickdouglass = new ItemModel({
+  name: "Frederick Douglass House",
+  description: "CHANGE THIS STARR",
+  free: true,
+  website: "http://www.nps.gov/frdo/index.htm"
+}).save();
+
+var gwmtvernon = new ItemModel({
+  name: "George Washington's Mount Vernon by Boat",
+  description: "CHANGE THIS STARR",
+  free: false,
+  website: "http://www.mountvernon.org/"
+}).save();
+
+var greatfalls = new ItemModel({
+  name: "Great Falls Rafting",
+  description: "CHANGE THIS STARR",
+  free: false,
+  website: "http://www.nps.gov/grfa/planyourvisit/kayaking.htm"
+}).save();
+
+var highheel = new ItemModel({
+  name: "High Heel Race",
+  description: "CHANGE THIS STARR",
+  free: false,
+  date: "October",
+  website: "https://www.facebook.com/17th-Street-High-Heel-Race-293167114030193/"
+}).save();
+
+var housedebate = new ItemModel({
+  name: "House of Representatives Debate",
+  description: "CHANGE THIS STARR",
+  free: true,
+  website: "http://www.house.gov/representatives/find/"
+}).save();
+
+var inaugural = new ItemModel({
+  name: "Inaugural Ball",
+  description: "CHANGE THIS STARR",
+  free: false
+}).save();
