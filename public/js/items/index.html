@@ -1,5 +1,10 @@
 <h2>Bucket List Items:</h2>
 
-<div id="all-items" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'-created_at'">
-  <p class="item"><a data-ui-sref="itemShow({id: item.id})">{{item.name}}</a></p>
+<button id="free" data-ng-click="freeFilter={free: true}">Free</button>
+<button id="not-free" data-ng-click="freeFilter={free: false}">Not free</button>
+<button id="reset" data-ng-click="freeFilter=''">Show All</button>
+
+<div id="all-items" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:freeFilter">
+  <p class="item"><a data-ui-sref="id: item.id">{{item.name}}</a></p>
+  <li class="item-free"><a data-ui-sref="id: item.id">{{item.free}}</a></li>
 </div>

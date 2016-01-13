@@ -14,11 +14,11 @@
   function RouterFunction($stateProvider){
     $stateProvider
     .state("itemIndex", {
-      url: "/",
+      url: "",
       templateUrl: "js/items/index.html",
       controller: "ItemIndexController",
       controllerAs: "ItemIndexViewModel"
     })
-  }
+  };
 
 }());

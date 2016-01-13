@@ -6,7 +6,7 @@ var ItemSchema = new Schema({
   name: String,
   description: String,
   website: String,
-  price: String,
+  free: Boolean,
   date: String
 });
 

@@ -10,5 +10,8 @@
 
   function ItemIndexControllerFunction(ItemFactory){
     this.items = ItemFactory.query();
-  }
+  };
+
+  console.log("Ready, Freddy!");
+
 }());
