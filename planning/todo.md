@@ -11,5 +11,9 @@
 ## Filters
 
 - [x] Default: Displays all (names only) in alphabetical order
-- [ ] Click "Free" button, only displays items where `price: "Free"` is true?
-- [ ] Click "Not free" button, only displays items where `price: "Free"` not true?
+- [x] Click "Free" button, only displays items where `price: "Free"` is true?
+- [x] Click "Not free" button, only displays items where `price: "Free"` not true?
+> Would really like for the filter logic to not be in the HTML
+
+- [x] Second set of filter buttons working, "Show all" still working
+> Can achieve multiple filters in the HTML... still would like not to though...
