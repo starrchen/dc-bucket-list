@@ -2,8 +2,9 @@
 
 - [x] Create API for bucket list items
 - [x] Get API data on page with angular
-- [ ] Filter data by parameters (date, price, alphabetical, etc.)
-- [ ] Deploy to Heroku
+- [x] Filter data by parameters (price, location, etc.)
+- [ ] SORT data by parameters (alphabetical, date)
+- [x] Deploy to Heroku
 - [ ] $locationProvider (remove `#` from URL)
 - [ ] Complete all seeds (currently: 18/50 entries, most incomplete)
 - [ ] Add styling ([Bootstrap](http://getbootstrap.com/) / [Materialize](http://materializecss.com/))
