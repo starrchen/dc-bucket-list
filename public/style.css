@@ -1,0 +1,17 @@
+#buttons {
+  margin-bottom: 20px;
+}
+
+.done {
+    background-color: #ff0000;
+}
+
+/*input[type=checkbox]{
+  display:none;
+}*/
+input[type=checkbox]+label{
+  color:blue;
+}
+input[type=checkbox]:checked+label{
+  color:red;
+}

@@ -1,6 +1,6 @@
 <h2>Bucket List Items:</h2>
 
-<div>
+<div id="button">
   <button id="free" data-ng-click="itemFilter={free: true}">Free</button>
   <button id="not-free" data-ng-click="itemFilter={free: false}">Not free</button>
   <button data-ng-click="itemFilter={planAhead: false}">Spontaneous fun</button>
@@ -9,34 +9,17 @@
   <button data-ng-click="itemFilter={metro: false}">Find a ride</button>
   <button id="reset" data-ng-click="itemFilter=''">Show All</button>
 </div>
-<!--
+
+<input type="checkbox" id="hello" />
+<label for="hello">Click me</label>
+
 <ol>
   <li class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:itemFilter">
-    <p class="item-name"><a data-ui-sref="id: item.id">{{item.name}}</a>
+    <input type="checkbox" id="item" />
+    <label for="item"><a data-ui-sref="id: item.id">{{item.name}}</a>
       <ul>
         <li class="item-free"><a data-ui-sref="id: item.id">{{item.free}}</a></li>
       </ul>
     </p>
   </li>
-</ol> -->
-
-<ol>
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:itemFilter">
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingOne">
-        <h4 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <li>{{item.name}}</li>
-          </a>
-        </h4>
-      </div>
-      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-        <div class="panel-body">
-          <p>{{item.description}}</p>
-
-          <p ng-if="item.free === true"><em>Free to do!</em></p> <p ng-if="item.free === false"><em>Please visit the website listed for pricing.</em></p>
-        </div>
-      </div>
-    </div>
-  </div>
 </ol>
