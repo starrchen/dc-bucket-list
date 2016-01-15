@@ -1,6 +1,23 @@
 <h2>Bucket List Items:</h2>
 
 <div id="button">
+  <button id="free" data-ng-click="freeFilter={free: true}">Free</button>
+  <button id="not-free" data-ng-click="freeFilter={free: false}">Not free</button>
+  <!--
+  <button data-ng-click="itemFilter={planAhead: false}">Spontaneous fun</button>
+  <button data-ng-click="itemFilter={planAhead: true}">Plan ahead fun</button>
+  <button data-ng-click="itemFilter={metro: true}">Metro-accessible</button>
+  <button data-ng-click="itemFilter={metro: false}">Find a ride</button>
+-->
+  <button data-ng-click="doneFilter={done: true}">Done!</button>
+  <button data-ng-click="doneFilter={done: false}">To Do!</button>
+  <button id="reset" data-ng-click="freeFilter=''; doneFilter=''">Show All</button>
+  <!--
+  <button data-ng-model="DoneController" id="reset" data-ng-click="clearFilter()">Show All</button>
+-->
+</div>
+<!--
+<div id="button">
   <button id="free" data-ng-click="itemFilter={free: true}">Free</button>
   <button id="not-free" data-ng-click="itemFilter={free: false}">Not free</button>
   <button data-ng-click="itemFilter={planAhead: false}">Spontaneous fun</button>
@@ -11,12 +28,10 @@
   <button data-ng-click="itemFilter={done: false}">To Do!</button>
   <button id="reset" data-ng-click="itemFilter=''">Show All</button>
 </div>
-
-<input type="checkbox" id="hello" />
-<label for="hello">Click me</label>
+-->
 
 <ol>
-  <li class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:itemFilter">
+  <li class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:freeFilter | filter:doneFilter">
     <input type="checkbox" id="item" data-ng-model="item.done"/>
     <label for="item"><a data-ui-sref="id: item.id">{{item.name}}</a>
       <ul>
