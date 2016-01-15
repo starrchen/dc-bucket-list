@@ -57,7 +57,8 @@ var blossomkites = new ItemModel({
   website: "http://www.nationalcherryblossomfestival.org/blossom-kite-festival",
   free: true,
   date: "April",
-  planAhead: false
+  planAhead: false,
+  metro: true
 }).save();
 
 var boundarystones = new ItemModel({
@@ -87,7 +88,8 @@ var citysights = new ItemModel({
   description: "Lorem ipsum CHANGE THIS STARR",
   free: false,
   website: "http://www.wmata.com/bus",
-
+  planAhead: false,
+  metro: true
 }).save();
 
 var civilwar = new ItemModel({
@@ -95,20 +97,26 @@ var civilwar = new ItemModel({
   description: "Lorem ipsum CHANGE THIS STARR",
   free: true,
   website: "http://www.nps.gov/search/?affiliate=nps&query=battlefield",
+  planAhead: false,
+  metro: false
 }).save();
 
 var congresscemetery = new ItemModel({
   name: "Congressional Cemetery",
   description: "Lorem ipsum CHANGE THIS STARR",
   free: true,
-  website: "http://www.congressionalcemetery.org"
+  website: "http://www.congressionalcemetery.org",
+  planAhead: false,
+  metro: true
 }).save();
 
 var fords = new ItemModel({
   name: "Ford's Theatre",
   description: "CHANGE THIS STARR",
   free: false,
-  website: "http://www.fords.org/"
+  website: "http://www.fords.org/",
+  planAhead: false,
+  metro: true
 }).save();
 
 var fourthfireworks = new ItemModel({
@@ -116,28 +124,36 @@ var fourthfireworks = new ItemModel({
   description: "CHANGE THIS STARR",
   free: true,
   date: "July 4th",
-  website: "http://www.nps.gov/subjects/nationalmall4th/fireworks.htm"
+  website: "http://www.nps.gov/subjects/nationalmall4th/fireworks.htm",
+  planAhead: true,
+  metro: true
 }).save();
 
 var frederickdouglass = new ItemModel({
   name: "Frederick Douglass House",
   description: "CHANGE THIS STARR",
   free: true,
-  website: "http://www.nps.gov/frdo/index.htm"
+  website: "http://www.nps.gov/frdo/index.htm",
+  planAhead: false,
+  metro: true
 }).save();
 
 var gwmtvernon = new ItemModel({
   name: "George Washington's Mount Vernon by Boat",
   description: "CHANGE THIS STARR",
   free: false,
-  website: "http://www.mountvernon.org/"
+  website: "http://www.mountvernon.org/",
+  planAhead: false,
+  metro: false
 }).save();
 
 var greatfalls = new ItemModel({
   name: "Great Falls Rafting",
   description: "CHANGE THIS STARR",
   free: false,
-  website: "http://www.nps.gov/grfa/planyourvisit/kayaking.htm"
+  website: "http://www.nps.gov/grfa/planyourvisit/kayaking.htm",
+  planAhead: false,
+  metro: false
 }).save();
 
 var highheel = new ItemModel({
@@ -145,18 +161,25 @@ var highheel = new ItemModel({
   description: "CHANGE THIS STARR",
   free: false,
   date: "October",
-  website: "https://www.facebook.com/17th-Street-High-Heel-Race-293167114030193/"
+  website: "https://www.facebook.com/17th-Street-High-Heel-Race-293167114030193/",
+  planAhead: true,
+  metro: true
 }).save();
 
 var housedebate = new ItemModel({
   name: "House of Representatives Debate",
   description: "CHANGE THIS STARR",
   free: true,
-  website: "http://www.house.gov/representatives/find/"
+  website: "http://www.house.gov/representatives/find/",
+  planAhead: true,
+  metro: true
 }).save();
 
 var inaugural = new ItemModel({
   name: "Inaugural Ball",
   description: "CHANGE THIS STARR",
-  free: false
+  free: false,
+  website: "http://www.inaugural.senate.gov/days-events/days-event/inaugural-ball",
+  planAhead: true,
+  metro: true
 }).save();

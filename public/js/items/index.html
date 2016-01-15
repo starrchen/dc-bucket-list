@@ -17,32 +17,31 @@
   <b>Filters</b><br/>
   <a>Pricing:
     <select id="free-filter" ng-model="freeFilter">
-      <option value=''>All</option>
+      <option value=''>--</option>
       <option value=true>Free</option>
       <option value=false>Not Free</option>
     </select>
   </a>
-  <!-- Assuming this is  not fully populated, the All option value='' messes with the filtering. Clear filters no longer works.
   <a>Planning Required?:
     <select id="plan-filter" ng-model="planFilter">
-      <option value=''>All</option>
+      <option value=''>--</option>
       <option value=true>Yes</option>
       <option value=false>No</option>
     </select>
   </a>
-  <a>Metro Accessibility:
+  <a>Metro[rail] Accessibile:
     <select id="metro-filter" ng-model="metroFilter">
-      <option value=''>All</option>
+      <option value=''>--</option>
       <option value=true>Yes</option>
       <option value=false>No</option>
     </select>
   </a>
--->
-  <a>Done Status:
+
+  <a>Bucket List Status:
     <select id="done-filter" ng-model="doneFilter">
-      <option value=''>All</option>
+      <option value=''>--</option>
       <option value=true>Done</option>
-      <option value=false>Not Done</option>
+      <option value=false>To Do</option>
     </select>
   </a>
 </div>
@@ -52,7 +51,7 @@
 </div>
 
 <ol>
-  <li class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:{free: freeFilter} | filter:{done:doneFilter}">
+  <li class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:{free: freeFilter} | filter:{done:doneFilter} | filter: {planAhead:planFilter} | filter: {metro:metroFilter}">
     <input type="checkbox" id="item" data-ng-model="item.done"/>
     <label for="item"><a data-ui-sref="id: item.id">{{item.name}}</a>
       <ul>
