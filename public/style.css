@@ -1,9 +1,43 @@
 #filters {
-  margin-bottom: 1em
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#reset {
+  border-bottom: solid 1px #EEEEEE;
+  padding-bottom: 1em;
 }
 
 .each-item {
   margin-top: 1em;
   border: 1px solid silver;
   padding: 1em;
+}
+
+footer{
+  text-align: center;
+  font-size: 10px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  margin-top: 20px;
+  margin-bottom:10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 641px) {
+  #all-items{
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-bottom: solid 1px #EEEEEE
 }
