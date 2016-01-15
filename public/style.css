@@ -1,17 +1,9 @@
-#buttons {
-  margin-bottom: 20px;
+#filters {
+  margin-bottom: 1em
 }
 
-.done {
-    background-color: #ff0000;
-}
-
-/*input[type=checkbox]{
-  display:none;
-}*/
-input[type=checkbox]+label{
-  color:blue;
-}
-input[type=checkbox]:checked+label{
-  color:red;
+.each-item {
+  margin-top: 1em;
+  border: 1px solid silver;
+  padding: 1em;
 }

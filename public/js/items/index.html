@@ -1,43 +1,31 @@
-<h2>Bucket List Items:</h2>
-
-<!--
-<div id="button">
-  <button id="free" data-ng-click="freeFilter={free: true}">Free</button>
-  <button id="not-free" data-ng-click="freeFilter={free: false}">Not free</button>
-  <button data-ng-click="planFilter={planAhead: false}">Spontaneous fun</button>
-  <button data-ng-click="planFilter={planAhead: true}">Plan ahead fun</button>
-  <button data-ng-click="metroFilter={metro: true}">Metro-accessible</button>
-  <button data-ng-click="metroFilter={metro: false}">Find a ride</button>
-  <button data-ng-click="doneFilter={done: true}">Done!</button>
-  <button data-ng-click="doneFilter={done: false}">To Do!</button>
-  <button id="reset" data-ng-click="freeFilter=''; doneFilter=''">Show All</button>
-</div>
--->
-<div id="filters">
-  <b>Filters</b><br/>
-  <a>Pricing:
+<div id="filters" class="row container">
+  <h3 class="text-center">Plan Your DC Adventures</h3>
+  <a class="col-xs-3">
+    <span>Pricing:</span>
     <select id="free-filter" ng-model="freeFilter">
       <option value=''>--</option>
       <option value=true>Free</option>
       <option value=false>Not Free</option>
     </select>
   </a>
-  <a>Planning Required?:
+  <a class="col-xs-3">
+    <span>Planning Required?:</span>
     <select id="plan-filter" ng-model="planFilter">
       <option value=''>--</option>
       <option value=true>Yes</option>
       <option value=false>No</option>
     </select>
   </a>
-  <a>Metro[rail] Accessibile:
+  <a class="col-xs-3">
+    <span>Metro[rail] Accessibile:</span>
     <select id="metro-filter" ng-model="metroFilter">
       <option value=''>--</option>
       <option value=true>Yes</option>
       <option value=false>No</option>
     </select>
   </a>
-
-  <a>Bucket List Status:
+  <a class="col-xs-3">
+    <span>Bucket List Status:</span>
     <select id="done-filter" ng-model="doneFilter">
       <option value=''>--</option>
       <option value=true>Done</option>
@@ -47,17 +35,18 @@
 </div>
 
 <div>
-  <button id="reset" data-ng-click="freeFilter=''; doneFilter='';metroFilter='';planFilter=''">Clear Filters</button>
+  <button id="reset" class="btn btn-sm center-block" data-ng-click="freeFilter=''; doneFilter='';metroFilter='';planFilter=''">Clear Filters</button>
 </div>
 
-<ol>
-  <li class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:{free: freeFilter} | filter:{done:doneFilter} | filter: {planAhead:planFilter} | filter: {metro:metroFilter}">
-    <input type="checkbox" id="item" data-ng-model="item.done"/>
-    <label for="item"><a data-ui-sref="id: item.id">{{item.name}}</a>
-      <ul>
-        <li ng-if="item.free === true"><em>Free to do!</em> </li>
-        <li ng-if="item.free === false"><em>Please visit the website listed for pricing.</em></li>
-      </ul>
-    </label>
-  </li>
-</ol>
+<h2 class="text-center">Bucket List Items:</h2>
+
+<div class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:{free: freeFilter} | filter:{done:doneFilter} | filter: {planAhead:planFilter} | filter: {metro:metroFilter}">
+  <input type="checkbox" id="item" data-ng-model="item.done"/>
+  <label for="item" id="item-name"><a data-ui-sref="id: item.id">{{item.name}}</a>
+  </label>
+  <ul class="list-unstyled">
+    <li><blockquote><small>{{item.description}}</small></blockquote></li>
+    <small><li class="text-muted" ng-if="item.free === true"><em>Free to do!</em> </li>
+    <li class="text-muted" ng-if="item.free === false"><em>Please visit the website listed for pricing.</em></li></small>
+  </ul>
+</div>
