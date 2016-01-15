@@ -1,10 +1,13 @@
-@font-face {
-  font-family: "Neutra";
-  src: url("/fonts/NeutraText-LightAlt.ttf");
+h1 a {
+  color: rgb(161, 56, 56)
 }
 
-h1 {
-  font-family: "Neutra";
+.lead a {
+  color: rgb(161, 56, 56)
+}
+
+.col-xs-3 {
+  color: rgb(161, 56, 56)
 }
 
 #filters {
@@ -34,6 +37,7 @@ footer{
   margin-bottom:10px;
   margin-left: auto;
   margin-right: auto;
+  color: grey
 }
 
 @media (min-width: 641px) {
@@ -53,12 +57,12 @@ header {
 
 body {
   background-image: url("http://www.thecreativearmada.com/imgs/skyline.svg");
-  background-position: center;
+  background-position: 50% 80%;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-.container {
+.container-fluid {
   background-color: white;
-  opacity: 0.9
+  opacity: 0.85
 }
