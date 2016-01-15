@@ -1,7 +1,7 @@
 <div id="filters" class="row container">
   <h3 class="text-center">Plan Your DC Adventures</h3>
-  <a class="col-xs-3">
-    <span>Pricing:</span>
+  <a class="col-xs-2">
+    <span>Price:</span>
     <select id="free-filter" ng-model="freeFilter">
       <option value=''>--</option>
       <option value=true>Free</option>
@@ -42,11 +42,49 @@
 
 <div class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:{free: freeFilter} | filter:{done:doneFilter} | filter: {planAhead:planFilter} | filter: {metro:metroFilter}">
   <input type="checkbox" id="item" data-ng-model="item.done"/>
-  <label for="item" id="item-name"><a data-ui-sref="id: item.id">{{item.name}}</a>
+  <label for="item" id="item-name"><a data-ui-sref="id: item.id">{{item.name}} <a href="{{item.website}}" target="_blank"><small><i class="fa fa-external-link"></i></small></a></a>
   </label>
   <ul class="list-unstyled">
-    <li><blockquote><small>{{item.description}}</small></blockquote></li>
-    <small><li class="text-muted" ng-if="item.free === true"><em>Free to do!</em> </li>
-    <li class="text-muted" ng-if="item.free === false"><em>Please visit the website listed for pricing.</em></li></small>
+    <li>
+      <blockquote><small>{{item.description}}</small></blockquote>
+    </li>
+    <small>
+      <li class="text-muted" ng-if="item.free === true">
+        <span class="fa-stack fa-sm">
+          <i class="fa fa-dollar fa-stack-1x"></i>
+          <i class="fa fa-ban fa-stack-2x text-danger"></i>
+        </span> <em>Free to do!</em>
+      </li>
+      <li class="text-muted" ng-if="item.free === false">
+        <span class="fa-stack fa-sm">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-dollar fa-stack-1x fa-inverse"></i>
+        </span> <em>Please visit the website listed for pricing.</em>
+      </li>
+      <li class="text-muted" ng-if="item.metro === true">
+        <span class="fa-stack fa-sm">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-subway fa-stack-1x fa-inverse"></i>
+        </span> <em>Within easy walking distance of a Metrorail station.</em>
+      </li>
+      <li class="text-muted" ng-if="item.metro === false">
+        <span class="fa-stack fa-sm">
+          <i class="fa fa-subway fa-stack-1x"></i>
+          <i class="fa fa-ban fa-stack-2x text-danger"></i>
+        </span> <em>Not easily accessible by Metrorail. Please check Metrobus routes or travel by bike/car.</em>
+      </li>
+      <li class="text-muted" ng-if="item.planAhead === true">
+        <span class="fa-stack fa-sm">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
+        </span> <em>Feeling spontaneous? Here's an option.</em>
+      </li>
+      <li class="text-muted" ng-if="item.planAhead === false">
+        <span class="fa-stack fa-sm">
+          <i class="fa fa-calendar fa-stack-1x"></i>
+          <i class="fa fa-ban fa-stack-2x text-danger"></i>
+        </span> <em>Feeling spontaneous? Here's an option.</em>
+      </li>
+    </small>
   </ul>
 </div>
