@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "NeutraText";
+  src: url("NeutraText-LightAlt.ttf") format("truetype");
+}
+
+header h1 {
+  font-family: "NeutraText";
+  text-transform: uppercase;
+}
+
 h1 a {
   color: rgb(161, 56, 56)
 }
@@ -38,6 +48,16 @@ footer{
   margin-left: auto;
   margin-right: auto;
   color: grey
+}
+
+@media (max-width:640px) {
+  header h1{
+    font-size: 3em;
+  }
+
+  body h2 {
+    font-size: 2em;
+  }
 }
 
 @media (min-width: 641px) {
