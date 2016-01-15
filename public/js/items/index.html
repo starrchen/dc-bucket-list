@@ -15,7 +15,7 @@
 
 <ol>
   <li class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:itemFilter">
-    <input type="checkbox" id="item" />
+    <input type="checkbox" id="item" data-ng-model="item.done"/>
     <label for="item"><a data-ui-sref="id: item.id">{{item.name}}</a>
       <ul>
         <li ng-if="item.free === true"><em>Free to do!</em> </li>

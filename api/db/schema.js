@@ -10,7 +10,8 @@ var ItemSchema = new Schema({
   free: Boolean,
   date: String,
   planAhead: Boolean,
-  metro: Boolean
+  metro: Boolean,
+  done: {type: Boolean, default: false}
 });
 
 var ItemModel = mongoose.model("Item", ItemSchema);
