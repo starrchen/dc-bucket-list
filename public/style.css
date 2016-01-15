@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Neutra";
+  src: url("/fonts/NeutraText-LightAlt.ttf");
+}
+
+h1 {
+  font-family: "Neutra";
+}
+
 #filters {
   margin-bottom: 1em;
   margin-left: auto;
@@ -40,4 +49,16 @@ header {
   margin-right: auto;
   text-align: center;
   border-bottom: solid 1px #EEEEEE
+}
+
+body {
+  background-image: url("http://www.thecreativearmada.com/imgs/skyline.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  background-color: white;
+  opacity: 0.9
 }
