@@ -1,42 +1,64 @@
 <h2>Bucket List Items:</h2>
 
+<!--
 <div id="button">
   <button id="free" data-ng-click="freeFilter={free: true}">Free</button>
   <button id="not-free" data-ng-click="freeFilter={free: false}">Not free</button>
-  <!--
-  <button data-ng-click="itemFilter={planAhead: false}">Spontaneous fun</button>
-  <button data-ng-click="itemFilter={planAhead: true}">Plan ahead fun</button>
-  <button data-ng-click="itemFilter={metro: true}">Metro-accessible</button>
-  <button data-ng-click="itemFilter={metro: false}">Find a ride</button>
--->
+  <button data-ng-click="planFilter={planAhead: false}">Spontaneous fun</button>
+  <button data-ng-click="planFilter={planAhead: true}">Plan ahead fun</button>
+  <button data-ng-click="metroFilter={metro: true}">Metro-accessible</button>
+  <button data-ng-click="metroFilter={metro: false}">Find a ride</button>
   <button data-ng-click="doneFilter={done: true}">Done!</button>
   <button data-ng-click="doneFilter={done: false}">To Do!</button>
   <button id="reset" data-ng-click="freeFilter=''; doneFilter=''">Show All</button>
-  <!--
-  <button data-ng-model="DoneController" id="reset" data-ng-click="clearFilter()">Show All</button>
--->
-</div>
-<!--
-<div id="button">
-  <button id="free" data-ng-click="itemFilter={free: true}">Free</button>
-  <button id="not-free" data-ng-click="itemFilter={free: false}">Not free</button>
-  <button data-ng-click="itemFilter={planAhead: false}">Spontaneous fun</button>
-  <button data-ng-click="itemFilter={planAhead: true}">Plan ahead fun</button>
-  <button data-ng-click="itemFilter={metro: true}">Metro-accessible</button>
-  <button data-ng-click="itemFilter={metro: false}">Find a ride</button>
-  <button data-ng-click="itemFilter={done: true}">Done!</button>
-  <button data-ng-click="itemFilter={done: false}">To Do!</button>
-  <button id="reset" data-ng-click="itemFilter=''">Show All</button>
 </div>
 -->
+<div id="filters">
+  <b>Filters</b><br/>
+  <a>Pricing:
+    <select id="free-filter" ng-model="freeFilter">
+      <option value=''>All</option>
+      <option value=true>Free</option>
+      <option value=false>Not Free</option>
+    </select>
+  </a>
+  <!-- Assuming this is  not fully populated, the All option value='' messes with the filtering. Clear filters no longer works.
+  <a>Planning Required?:
+    <select id="plan-filter" ng-model="planFilter">
+      <option value=''>All</option>
+      <option value=true>Yes</option>
+      <option value=false>No</option>
+    </select>
+  </a>
+  <a>Metro Accessibility:
+    <select id="metro-filter" ng-model="metroFilter">
+      <option value=''>All</option>
+      <option value=true>Yes</option>
+      <option value=false>No</option>
+    </select>
+  </a>
+-->
+  <a>Done Status:
+    <select id="done-filter" ng-model="doneFilter">
+      <option value=''>All</option>
+      <option value=true>Done</option>
+      <option value=false>Not Done</option>
+    </select>
+  </a>
+</div>
+
+<div>
+  <button id="reset" data-ng-click="freeFilter=''; doneFilter='';metroFilter='';planFilter=''">Clear Filters</button>
+</div>
 
 <ol>
-  <li class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:freeFilter | filter:doneFilter">
+  <li class="each-item" data-ng-repeat="item in ItemIndexViewModel.items | orderBy:'name' | filter:{free: freeFilter} | filter:{done:doneFilter}">
     <input type="checkbox" id="item" data-ng-model="item.done"/>
     <label for="item"><a data-ui-sref="id: item.id">{{item.name}}</a>
       <ul>
         <li ng-if="item.free === true"><em>Free to do!</em> </li>
         <li ng-if="item.free === false"><em>Please visit the website listed for pricing.</em></li>
       </ul>
+    </label>
   </li>
 </ol>
