@@ -18,8 +18,8 @@
     <input type="checkbox" id="item" />
     <label for="item"><a data-ui-sref="id: item.id">{{item.name}}</a>
       <ul>
-        <li class="item-free"><a data-ui-sref="id: item.id">{{item.free}}</a></li>
+        <li ng-if="item.free === true"><em>Free to do!</em> </li>
+        <li ng-if="item.free === false"><em>Please visit the website listed for pricing.</em></li>
       </ul>
-    </p>
   </li>
 </ol>
