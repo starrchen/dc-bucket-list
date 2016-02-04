@@ -27,6 +27,12 @@ The GWBL App is a MEAN app. The cumulative stack is:
 - Node.js
 - AngularJS
 
+## Future Features
+With more time and experience using Angular, I will be working on a few features for this app:
+- Completing the API to include all 50 bucket list items
+- User authentication & authorization for item list "done" status
+- Ability to share progress with bucket list with friends through social media
+
 ## Attributions
 This project would not be possible without:
 - The Washingtonian and their original list
